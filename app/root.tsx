@@ -42,6 +42,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+export function HydrateFallback() {
+  return (
+    <main className="mx-auto grid min-h-screen w-[92vw] max-w-5xl place-content-center py-10">
+      <section className="w-full rounded-3xl border border-[#8db1ff30] bg-linear-to-br from-[#0a1222] via-[#0f1c30] to-[#102128] p-6 shadow-[0_20px_48px_#020712cc] md:p-10">
+        <div className="h-3 w-28 animate-pulse rounded bg-[#67b6ff55]" />
+        <div className="mt-5 h-10 w-[min(32rem,80vw)] animate-pulse rounded bg-[#d7e7ff22]" />
+        <div className="mt-4 h-4 w-[min(42rem,85vw)] animate-pulse rounded bg-[#b7c4de22]" />
+        <div className="mt-2 h-4 w-[min(36rem,74vw)] animate-pulse rounded bg-[#b7c4de22]" />
+        <div className="mt-7 flex gap-3">
+          <div className="h-11 w-40 animate-pulse rounded-full bg-[#177dd755]" />
+          <div className="h-11 w-36 animate-pulse rounded-full bg-[#9ec4ff22]" />
+        </div>
+      </section>
+    </main>
+  );
+}
+
 export default function App() {
   return <Outlet />;
 }
