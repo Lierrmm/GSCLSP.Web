@@ -1,87 +1,64 @@
-# Welcome to React Router!
+# GSCLSP.Web
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Marketing site for the GSC LSP VS Code extension.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+- Marketplace: https://marketplace.visualstudio.com/items?itemName=bbe-tools.gsclsp
+- Source: https://github.com/Lierrmm/GSCLSP/
 
-## Features
+## Tech Stack
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- React Router v7 (framework mode)
+- React 19
+- Tailwind CSS v4
+- TypeScript
+- Bun
 
-## Getting Started
+## App Mode
 
-### Installation
+This project is configured as a static SPA:
 
-Install the dependencies:
+- `ssr: false` in `react-router.config.ts`
+- Production output is deployed from `build/client`
 
-```bash
-npm install
-```
+## Local Development
 
-### Development
-
-Start the development server with HMR:
+Install dependencies:
 
 ```bash
-npm run dev
+bun install
 ```
 
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
+Start dev server:
 
 ```bash
-npm run build
+bun run dev
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+Typecheck:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+bun run typecheck
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+Build production assets:
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+```bash
+bun run build
 ```
 
-## Styling
+### SPA Routing Fallback
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Cloudflare Pages needs a redirect fallback so client-side routes resolve correctly.
 
----
+Create `public/_redirects` with:
 
-Built with ❤️ using React Router.
+```txt
+/* / 200
+```
+
+If Cloudflare reports an infinite loop for `/* /index.html 200`, switch to the rule above.
+
+## Notes
+
+- You may still see `@react-router/node` and `isbot` in dependencies. They are required by the React Router build pipeline even when SSR is disabled.
+- Route type files in `.react-router/types` are generated automatically when running dev/typecheck.
