@@ -73,9 +73,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     message = error.status === 404 ? "404" : "Error";
     statusCode = String(error.status);
     details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+      error.status === 404 ? "The requested page could not be found." : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
@@ -95,9 +93,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
             </span>
           ) : null}
         </h1>
-        <p className="mt-4 max-w-[65ch] text-[#b7c4de] leading-relaxed">
-          {details}
-        </p>
+        <p className="mt-4 max-w-[65ch] text-[#b7c4de] leading-relaxed">{details}</p>
 
         <div className="mt-7 flex flex-wrap gap-3">
           <a

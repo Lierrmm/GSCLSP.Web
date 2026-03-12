@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
 
+// oxlint-disable-next-line no-empty-pattern
 export function meta({}: Route.MetaArgs) {
   const title = "GSC LSP for VS Code | Fast GSC Language Support";
   const description =
@@ -13,8 +14,7 @@ export function meta({}: Route.MetaArgs) {
     },
     {
       name: "keywords",
-      content:
-        "GSC, GSC LSP, VS Code extension, language server, game scripting, IntelliSense",
+      content: "GSC, GSC LSP, VS Code extension, language server, game scripting, IntelliSense",
     },
     { property: "og:type", content: "website" },
     { property: "og:title", content: title },
@@ -36,8 +36,8 @@ export default function Home() {
           GSC LSP
         </h1>
         <p className="mt-4 max-w-[68ch] text-[clamp(1rem,2vw,1.2rem)] leading-relaxed text-[#b7c4de]">
-          A high-performance Language Server for GSC scripting, featuring deep
-          engine integration and lightning-fast symbol indexing.
+          A high-performance Language Server for GSC scripting, featuring deep engine integration
+          and lightning-fast symbol indexing.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <a
@@ -93,26 +93,24 @@ export default function Home() {
         <article className="animate-[reveal-up_0.7s_ease-out_both] rounded-2xl border border-[#84aefb2b] bg-[#0d1727cc] p-4 shadow-[0_10px_30px_#020812ab]">
           <h2 className="m-0 text-lg text-[#eaf1ff]">980+ Engine Built-ins</h2>
           <p className="mt-2 text-[#b7c4de] leading-relaxed">
-            Full support for engine functions with context-aware auto-completion
-            directly inside your scripts.
+            Full support for engine functions with context-aware auto-completion directly inside
+            your scripts.
           </p>
         </article>
 
         <article className="animate-[reveal-up_0.7s_ease-out_110ms_both] rounded-2xl border border-[#84aefb2b] bg-[#0d1727cc] p-4 shadow-[0_10px_30px_#020812ab]">
-          <h2 className="m-0 text-lg text-[#eaf1ff]">
-            18,000+ Symbols Indexed
-          </h2>
+          <h2 className="m-0 text-lg text-[#eaf1ff]">18,000+ Symbols Indexed</h2>
           <p className="mt-2 text-[#b7c4de] leading-relaxed">
-            Instantly browse game symbols and function definitions for faster
-            coding and reduced lookup time, all with custom dump support.
+            Instantly browse game symbols and function definitions for faster coding and reduced
+            lookup time, all with custom dump support.
           </p>
         </article>
 
         <article className="animate-[reveal-up_0.7s_ease-out_210ms_both] rounded-2xl border border-[#84aefb2b] bg-[#0d1727cc] p-4 shadow-[0_10px_30px_#020812ab]">
           <h2 className="m-0 text-lg text-[#eaf1ff]">Workspace Intelligence</h2>
           <p className="mt-2 text-[#b7c4de] leading-relaxed">
-            Understands your project layout for smooth go-to-definition,
-            references, and navigation flows.
+            Understands your project layout for smooth go-to-definition, references, and navigation
+            flows.
           </p>
         </article>
       </section>
@@ -126,9 +124,9 @@ export default function Home() {
             Engine-aware tooling without the lag
           </h2>
           <p className="mt-3 text-[#b7c4de] leading-relaxed">
-            GSC Language Support is built to keep pace with large game script
-            workspaces. You get the confidence of deep engine understanding plus
-            the speed to stay in flow while editing.
+            GSC Language Support is built to keep pace with large game script workspaces. You get
+            the confidence of deep engine understanding plus the speed to stay in flow while
+            editing.
           </p>
         </div>
         <div className="grid gap-3 md:grid-cols-3">
@@ -136,17 +134,13 @@ export default function Home() {
             <strong className="block text-[1.55rem] leading-tight text-[#eaf1ff]">
               Zero-Setup
             </strong>
-            <span className="mt-1 block text-sm text-[#b7c4de]">
-              Works out of the box
-            </span>
+            <span className="mt-1 block text-sm text-[#b7c4de]">Works out of the box</span>
           </div>
           <div className="rounded-xl border border-[#9cbfff2e] bg-[#111d31] p-4 text-center">
             <strong className="block text-[1.55rem] leading-tight text-[#eaf1ff]">
               Engine-Aware
             </strong>
-            <span className="mt-1 block text-sm text-[#b7c4de]">
-              Smart completions in context
-            </span>
+            <span className="mt-1 block text-sm text-[#b7c4de]">Smart completions in context</span>
           </div>
           <div className="rounded-xl border border-[#9cbfff2e] bg-[#111d31] p-4 text-center">
             <strong className="block text-[1.55rem] leading-tight text-[#eaf1ff]">
