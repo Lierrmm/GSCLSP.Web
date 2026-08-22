@@ -2,6 +2,10 @@
 
 :root {
   --font-sans: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  --ink: #f2eee5;
+  --muted: #b9b1a5;
+  --accent-coral: #ff8066;
+  --accent-mint: #9ed4c4;
 }
 
 html,
@@ -11,10 +15,10 @@ body {
   color-scheme: dark;
   font-family: var(--font-sans);
   background:
-    radial-gradient(circle at 10% 8%, #2556a04d 0%, transparent 43%),
-    radial-gradient(circle at 92% 0%, #1aa78647 0%, transparent 35%),
-    linear-gradient(165deg, #05070d 0%, #070d17 52%, #0b1220 100%);
-  color: #eaf1ff;
+    radial-gradient(circle at 12% 5%, #bd66451f 0%, transparent 32%),
+    radial-gradient(circle at 88% 12%, #6eaa9520 0%, transparent 30%),
+    linear-gradient(165deg, #111314 0%, #171918 55%, #20211e 100%);
+  color: var(--ink);
 }
 
 @keyframes reveal-up {
@@ -26,4 +30,53 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+[class*="rounded-3xl"],
+[class*="rounded-2xl"],
+[class*="rounded-xl"],
+[class*="rounded-full"] {
+  border-radius: 4px;
+}
+
+[class*="text-[#eaf1ff]"],
+[class*="text-[#d7e7ff]"] {
+  color: var(--ink);
+}
+
+[class*="text-[#b7c4de]"] {
+  color: var(--muted);
+}
+
+[class*="text-[#8fa2c4]"] {
+  color: #9b9a8d;
+}
+
+[class*="text-[#67b6ff]"] {
+  color: var(--accent-coral);
+}
+
+[class*="text-[#47c6b0]"] {
+  color: var(--accent-mint);
+}
+
+[class*="border-[#8db1ff"],
+[class*="border-[#84aefb"],
+[class*="border-[#9cbfff"] {
+  border-color: #c8a28e45;
+}
+
+[class*="bg-[#0d1727"],
+[class*="bg-[#111d31"] {
+  background-color: #202522cc;
+}
+
+[class*="bg-[#0a1324"],
+[class*="bg-[#0a1222"],
+[class*="bg-[#0a1730"] {
+  background-color: #1b201dcc;
+}
+
+[class*="bg-[#070c16"] {
+  background-color: #0d100f;
 }
